@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello 页面</title>
+    <style>
+        /* 极简风格，让 Hello 在页面居中显示 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+
+        .hello-box {
+            background: white;
+            padding: 3rem 5rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hello-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 48px -16px rgba(0, 0, 0, 0.2);
+        }
+
+        .hello-text {
+            font-size: 5rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: #1e293b;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .hello-text span {
+            display: inline-block;
+            animation: gentle-float 3s ease-in-out infinite;
+        }
+
+        /* 简单浮动动画，让 Hello 有点生气 */
+        @keyframes gentle-float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        /* 在小屏幕上调整字号 */
+        @media (max-width: 480px) {
+            .hello-box {
+                padding: 2rem 2.5rem;
+                border-radius: 1.5rem;
+            }
+            .hello-text {
+                font-size: 3.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hello-box">
+        <div class="hello-text">
+            <span>👋</span> Hello
+        </div>
+    </div>
+</body>
+</html>
